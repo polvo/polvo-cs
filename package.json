@@ -1,0 +1,25 @@
+{
+  "name": "polvo-cs",
+  "version": "0.0.1",
+  "author": "Anderson Arboleya <anderson@arboleya.me>",
+  "description": "Coffeescript plugin for Polvo",
+  "keywords": [
+    "polvo",
+    "plugin",
+    "build",
+    "system",
+    "tool",
+    "coffeescript"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/polvo/polvo-cs"
+  },
+  "dependencies": {
+    "source-map-support": "0.2.x"
+  },
+  "devDependencies": {
+    "coffee-script": "1.6.x"
+  }
+}
