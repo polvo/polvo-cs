@@ -8,26 +8,28 @@ var Index, cs;
 cs = require('coffee-script');
 
 module.exports = new (Index = (function() {
-  var LITERATE;
+  var is_literate;
 
   function Index() {}
 
   Index.prototype.polvo = true;
 
-  Index.prototype.type = 'js';
+  Index.prototype.type = 'script';
 
   Index.prototype.name = 'coffee-script';
+
+  Index.prototype.output = 'js';
 
   Index.prototype.ext = /\.(lit\.)?(coffee)(\.md)?$/m;
 
   Index.prototype.exts = ['.coffee', '.litcoffee', '.coffee.md'];
 
-  LITERATE = /\.(litcoffee|coffee\.md)$/m;
+  is_literate = /\.(litcoffee|coffee\.md)$/m;
 
   Index.prototype.compile = function(filepath, source, debug, done) {
     var bare, compiled, err, js, literate, map, sourceMap;
     bare = 1;
-    literate = LITERATE.test(this.filepath);
+    literate = is_literate.test(this.filepath);
     sourceMap = 1;
     if (literate) {
       source = source.replace(/^[^\s]+.+$/mg, '');

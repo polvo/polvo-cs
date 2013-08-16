@@ -7,16 +7,18 @@ module.exports = new class Index
 
   polvo: true
 
-  type: 'js'
+  type: 'script'
   name: 'coffee-script'
+  output: 'js'
+
   ext: /\.(lit\.)?(coffee)(\.md)?$/m
   exts: ['.coffee', '.litcoffee', '.coffee.md']
 
-  LITERATE = /\.(litcoffee|coffee\.md)$/m
+  is_literate = /\.(litcoffee|coffee\.md)$/m
 
   compile:( filepath, source, debug, done )->
     bare = 1
-    literate = LITERATE.test @filepath
+    literate = is_literate.test @filepath
     sourceMap = 1
 
     source = source.replace /^[^\s]+.+$/mg, '' if literate
