@@ -24,7 +24,7 @@ module.exports = new (Index = (function() {
 
   LITERATE = /\.(litcoffee|coffee\.md)$/m;
 
-  Index.prototype.compile = function(filepath, source, done) {
+  Index.prototype.compile = function(filepath, source, debug, done) {
     var bare, compiled, err, js, literate, map, sourceMap;
     bare = 1;
     literate = LITERATE.test(this.filepath);

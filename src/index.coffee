@@ -14,7 +14,7 @@ module.exports = new class Index
 
   LITERATE = /\.(litcoffee|coffee\.md)$/m
 
-  compile:( filepath, source, done )->
+  compile:( filepath, source, debug, done )->
     bare = 1
     literate = LITERATE.test @filepath
     sourceMap = 1
