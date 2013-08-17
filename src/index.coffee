@@ -16,7 +16,7 @@ module.exports = new class Index
 
   is_literate = /\.(litcoffee|coffee\.md)$/m
 
-  compile:( filepath, source, debug, done )->
+  compile:( filepath, source, debug, error, done )->
     bare = 1
     literate = is_literate.test @filepath
     sourceMap = 1
@@ -25,11 +25,10 @@ module.exports = new class Index
 
     try
       compiled = cs.compile source, {bare, sourceMap}
-      
+
       js = compiled.js
       map = JSON.parse compiled.v3SourceMap
-
-      done js, (JSON.stringify map, null, 2)
     catch err
-      console.error err.message + ' at ' + @filepath
-      done()
+      return error err
+
+    done js, (JSON.stringify map, null, 2)

@@ -26,7 +26,7 @@ module.exports = new (Index = (function() {
 
   is_literate = /\.(litcoffee|coffee\.md)$/m;
 
-  Index.prototype.compile = function(filepath, source, debug, done) {
+  Index.prototype.compile = function(filepath, source, debug, error, done) {
     var bare, compiled, err, js, literate, map, sourceMap;
     bare = 1;
     literate = is_literate.test(this.filepath);
@@ -41,12 +41,11 @@ module.exports = new (Index = (function() {
       });
       js = compiled.js;
       map = JSON.parse(compiled.v3SourceMap);
-      return done(js, JSON.stringify(map, null, 2));
     } catch (_error) {
       err = _error;
-      console.error(err.message + ' at ' + this.filepath);
-      return done();
+      return error(err);
     }
+    return done(js, JSON.stringify(map, null, 2));
   };
 
   return Index;
