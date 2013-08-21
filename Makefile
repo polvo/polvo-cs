@@ -1,5 +1,6 @@
-CS=node_modules/coffee-script/bin/coffee
-VERSION=`$(CS) scripts/bumper.coffee --version`
+MVERSION=node_modules/.bin/mversion
+VERSION=`$(MVERSION) | sed -E 's/\* package.json: //g'`
+
 
 setup:
 	@npm install
@@ -7,21 +8,21 @@ setup:
 
 
 watch:
-	@$(CS) -bwco ./ src/index.coffee
+	@$(CS) -bwc index.coffee
 
 build:
-	@$(CS) -bco ./ src/index.coffee
+	@$(CS) -bc index.coffee
 
 
 
 bump.minor:
-	@$(CS) scripts/bumper.coffee --minor
+	@$(MVERSION) minor
 
 bump.major:
-	@$(CS) scripts/bumper.coffee --major
+	@$(MVERSION) major
 
 bump.patch:
-	@$(CS) scripts/bumper.coffee --patch
+	@$(MVERSION) patch
 
 
 
