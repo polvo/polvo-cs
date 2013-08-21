@@ -20,6 +20,7 @@
     "source-map-support": "0.2.x"
   },
   "devDependencies": {
-    "coffee-script": "1.6.x"
+    "coffee-script": "1.6.x",
+    "mversion": "~0.2.0"
   }
 }
