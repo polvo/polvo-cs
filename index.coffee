@@ -5,8 +5,6 @@ cs = require 'coffee-script'
 
 module.exports = new class Index
 
-  polvo: true
-
   type: 'script'
   name: 'coffee-script'
   output: 'js'
