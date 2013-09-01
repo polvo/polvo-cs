@@ -12,6 +12,8 @@ With this plugin, Polvo can handle CoffeeScript source files.
 
 You won't need to install it since it comes built in in Polvo.
 
+Enjoy.
+
 # Instructions
 
 Just put your `.coffee`, `.litcoffee` or `.coffee.md` files in your `input dirs`
