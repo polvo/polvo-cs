@@ -11,7 +11,7 @@
     "tool",
     "coffeescript"
   ],
-  "main": "index.js",
+  "main": "lib",
   "repository": {
     "type": "git",
     "url": "http://github.com/polvo/polvo-cs"
