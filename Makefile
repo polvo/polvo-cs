@@ -27,7 +27,7 @@ test: build
 		--ui bdd \
 		--reporter spec \
 		--recursive \
-		tests/unit
+		tests
 
 test.coverage: build
 	@$(ISTANBUL) cover $(_MOCHA) -- \
@@ -35,7 +35,7 @@ test.coverage: build
 		--ui bdd \
 		--reporter spec \
 		--recursive \
-		tests/unit
+		tests
 
 test.coverage.preview: test.coverage
 	@cd coverage/lcov-report && python -m SimpleHTTPServer 8080

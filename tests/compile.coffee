@@ -1,5 +1,5 @@
 should = require('chai').should()
-coffee = require '../../'
+coffee = require '..'
 
 good_syntax = 'sum = (a, b)-> a + b'
 bad_syntax = 'a = 1\n b = [\n c = 2'
