@@ -17,10 +17,10 @@
     "url": "http://github.com/polvo/polvo-cs"
   },
   "dependencies": {
+    "coffee-script": "1.6.x",
     "source-map-support": "0.2.x"
   },
   "devDependencies": {
-    "coffee-script": "1.6.x",
     "mversion": "0.2.x",
     "chai": "1.7.x",
     "mocha": "1.12.x",
